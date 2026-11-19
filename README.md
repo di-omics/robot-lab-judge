@@ -1,5 +1,7 @@
 # robot-lab-judge
 
+[![ci](https://github.com/di-omics/robot-lab-judge/actions/workflows/ci.yml/badge.svg)](https://github.com/di-omics/robot-lab-judge/actions/workflows/ci.yml)
+
 **Status: simulation only.** A vision judge looks at the camera pictures of a robot lab chore and says PASS or FAIL.
 This repo measures how often it is right, and climbs one step at a time. So far: 3 small open-weight models, asked
 zero-shot, on 475 scenes. The best one scores 0.65 balanced accuracy, and it is at a coin flip on every plate
@@ -35,9 +37,9 @@ Written and run by AI models under the author's direction. No person has reviewe
 
 | Step | Judge | Dev balanced accuracy | Status |
 |---|---|---|---|
-| 1 | Small open models, zero-shot, last frame | 0.47 to 0.65 | done |
+| 1 | Small open-weight models, zero-shot, last frame | 0.47 to 0.65 | done |
 | 2 | The same models, first and last frame | 0.50 to 0.64 | done |
-| 3 | Frozen vision features and a small trained head | | running |
+| 3 | Frozen vision features and a small trained head | | in progress |
 | 4 | A small model fine-tuned on the train scenes | | not started |
 | 5 | Frontier models, zero-shot | | not started |
 | 6 | Cameras and lighting the judge has not seen | | not started |
