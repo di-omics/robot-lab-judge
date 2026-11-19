@@ -1,0 +1,18 @@
+.venv/
+__pycache__/
+.DS_Store
+.pytest_cache/
+*.partial
+
+# pictures and cached features: large, and the simulator makes them again
+data/first_look/
+data/features/
+data/simset/*/frames/
+data/simset/*/sheet.jpg
+
+# the sealed split: its labels stay out of the repo
+data/simset/test/manifest.jsonl
+data/simset/test/info.json
+
+# contact sheets of recorded takes
+results/first_look/sheet_*.jpg

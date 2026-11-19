@@ -1,0 +1,30 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Install what the tests need (no model, no simulator)
+        run: python -m pip install numpy pillow av pytest
+      - name: Tests that need no pictures and no model
+        run: python -m pytest -q -rs
+      - name: The tables in the README match the saved verdicts
+        run: python tools/update_readme.py --check
+      - name: The saved verdicts still give the saved board
+        run: |
+          python -m labjudge board --results results/simset_dev > /dev/null
+          python -m labjudge breakdown --data data/simset/dev --results results/simset_dev > /dev/null
+          git diff --exit-code -- results
+      - name: ASCII only, no em dashes
+        run: |
+          ! git ls-files -z | xargs -0 file --mime | grep -v 'charset=binary' | cut -d: -f1 | xargs grep -nP '[^\x00-\x7F]'

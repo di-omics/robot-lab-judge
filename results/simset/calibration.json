@@ -1,0 +1,386 @@
+{
+  "date": "2026-11-19",
+  "seeds": [
+    10000,
+    10001,
+    10002
+  ],
+  "versions": {
+    "labbench": "0.1.0",
+    "code": "92c256eb309b",
+    "dreamlabs": "1.0.42",
+    "mujoco": "4.0.1"
+  },
+  "excluded": {
+    "rack_carry": "success also needs earlier stages: rack_lifted_level",
+    "tube_handover": "success also needs earlier stages: right_hand_has_it"
+  },
+  "included": [
+    "tubes_to_rack",
+    "bottle_to_shelf",
+    "plate_to_tray",
+    "sort_by_cap",
+    "tubes_to_waste",
+    "stack_tip_boxes",
+    "plate_to_hotel_top",
+    "plate_to_hotel_middle",
+    "plate_to_hotel_bottom",
+    "stack_plates",
+    "unstack_plate",
+    "small_tubes_to_rack",
+    "rack_into_box"
+  ],
+  "tasks": {
+    "tubes_to_rack": {
+      "flips_mm": [
+        3.24,
+        3.77,
+        3.77,
+        4.38,
+        3.77,
+        3.24,
+        3.77,
+        3.24,
+        3.77
+      ],
+      "median_flip_mm": 3.77,
+      "fit_flip_mm": 3.82,
+      "fit_wrong": 0,
+      "sweep_n": 47,
+      "sweep_pass": 23,
+      "tilt_pass": 8,
+      "tilt_n": 13,
+      "evals": 146,
+      "discards": 40,
+      "discard_reasons": {
+        "not at rest": 26,
+        "a prop left the table": 13,
+        "blocked": 1
+      },
+      "notes": []
+    },
+    "bottle_to_shelf": {
+      "flips_mm": [
+        60.0,
+        60.0,
+        55.68,
+        47.94,
+        60.0,
+        47.94,
+        47.94,
+        47.94,
+        60.0
+      ],
+      "median_flip_mm": 55.68,
+      "fit_flip_mm": 49.49,
+      "fit_wrong": 0,
+      "sweep_n": 48,
+      "sweep_pass": 45,
+      "tilt_pass": 11,
+      "tilt_n": 11,
+      "evals": 106,
+      "discards": 7,
+      "discard_reasons": {
+        "a prop left the table": 2,
+        "not at rest": 5
+      },
+      "notes": [
+        "s10000 bottle 159 deg: passes at 60 mm",
+        "s10000 bottle -165 deg: passes at 60 mm",
+        "s10001 bottle -34 deg: passes at 60 mm",
+        "s10002 bottle 147 deg: passes at 60 mm"
+      ]
+    },
+    "plate_to_tray": {
+      "flips_mm": [
+        5.9,
+        5.08,
+        5.9,
+        5.9,
+        5.08,
+        5.08,
+        5.9,
+        5.9,
+        5.08
+      ],
+      "median_flip_mm": 5.9,
+      "fit_flip_mm": 5.57,
+      "fit_wrong": 3,
+      "sweep_n": 48,
+      "sweep_pass": 17,
+      "tilt_pass": 8,
+      "tilt_n": 15,
+      "evals": 126,
+      "discards": 0,
+      "discard_reasons": {},
+      "notes": []
+    },
+    "sort_by_cap": {
+      "flips_mm": [
+        60.0,
+        47.94,
+        47.94,
+        55.68,
+        60.0,
+        60.0,
+        60.0,
+        60.0,
+        60.0
+      ],
+      "median_flip_mm": 60.0,
+      "fit_flip_mm": 39.29,
+      "fit_wrong": 0,
+      "sweep_n": 48,
+      "sweep_pass": 47,
+      "tilt_pass": 10,
+      "tilt_n": 12,
+      "evals": 98,
+      "discards": 5,
+      "discard_reasons": {
+        "not at rest": 2,
+        "a prop left the table": 3
+      },
+      "notes": [
+        "s10000 tube_red 14 deg: passes at 60 mm",
+        "s10001 tube_red 1 deg: passes at 60 mm",
+        "s10001 tube_red -132 deg: passes at 60 mm",
+        "s10002 tube_blue -146 deg: passes at 60 mm",
+        "s10002 tube_red 2 deg: passes at 60 mm",
+        "s10002 tube_red 133 deg: passes at 60 mm"
+      ]
+    },
+    "tubes_to_waste": {
+      "flips_mm": [
+        35.54,
+        60.0,
+        60.0,
+        55.68,
+        60.0,
+        35.54,
+        35.54,
+        41.28,
+        26.35
+      ],
+      "median_flip_mm": 41.28,
+      "fit_flip_mm": 60.0,
+      "fit_wrong": 0,
+      "sweep_n": 48,
+      "sweep_pass": 48,
+      "tilt_pass": 14,
+      "tilt_n": 14,
+      "evals": 115,
+      "discards": 19,
+      "discard_reasons": {
+        "blocked": 18,
+        "not at rest": 1
+      },
+      "notes": [
+        "s10000 tube_a -115 deg: passes at 60 mm",
+        "s10000 tube_b -42 deg: passes at 60 mm",
+        "s10001 tube_b -50 deg: passes at 60 mm"
+      ]
+    },
+    "stack_tip_boxes": {
+      "flips_mm": [
+        26.35,
+        26.35,
+        26.35,
+        26.35,
+        26.35,
+        26.35,
+        26.35,
+        26.35,
+        26.35
+      ],
+      "median_flip_mm": 26.35,
+      "fit_flip_mm": 29.07,
+      "fit_wrong": 8,
+      "sweep_n": 48,
+      "sweep_pass": 34,
+      "tilt_pass": 15,
+      "tilt_n": 15,
+      "evals": 126,
+      "discards": 0,
+      "discard_reasons": {},
+      "notes": []
+    },
+    "plate_to_hotel_top": {
+      "flips_mm": [
+        5.08,
+        5.08,
+        16.82,
+        5.9,
+        5.08,
+        5.9,
+        5.08,
+        5.08,
+        5.08
+      ],
+      "median_flip_mm": 5.08,
+      "fit_flip_mm": 6.64,
+      "fit_wrong": 6,
+      "sweep_n": 48,
+      "sweep_pass": 30,
+      "tilt_pass": 14,
+      "tilt_n": 15,
+      "evals": 126,
+      "discards": 0,
+      "discard_reasons": {},
+      "notes": []
+    },
+    "plate_to_hotel_middle": {
+      "flips_mm": [
+        16.82,
+        5.9,
+        6.86,
+        5.08,
+        5.9,
+        12.47,
+        5.08,
+        16.82,
+        5.08
+      ],
+      "median_flip_mm": 5.9,
+      "fit_flip_mm": 60.0,
+      "fit_wrong": 0,
+      "sweep_n": 46,
+      "sweep_pass": 46,
+      "tilt_pass": 13,
+      "tilt_n": 13,
+      "evals": 180,
+      "discards": 83,
+      "discard_reasons": {
+        "blocked": 83
+      },
+      "notes": []
+    },
+    "plate_to_hotel_bottom": {
+      "flips_mm": [
+        5.08,
+        19.54,
+        5.08,
+        16.82,
+        5.9,
+        5.08,
+        7.96,
+        16.82,
+        5.08
+      ],
+      "median_flip_mm": 5.9,
+      "fit_flip_mm": 18.25,
+      "fit_wrong": 0,
+      "sweep_n": 46,
+      "sweep_pass": 44,
+      "tilt_pass": 11,
+      "tilt_n": 11,
+      "evals": 159,
+      "discards": 62,
+      "discard_reasons": {
+        "blocked": 62
+      },
+      "notes": []
+    },
+    "stack_plates": {
+      "flips_mm": [
+        12.47,
+        14.48,
+        12.47,
+        12.47,
+        12.47,
+        12.47,
+        12.47,
+        12.47,
+        12.47
+      ],
+      "median_flip_mm": 12.47,
+      "fit_flip_mm": 11.88,
+      "fit_wrong": 5,
+      "sweep_n": 48,
+      "sweep_pass": 27,
+      "tilt_pass": 15,
+      "tilt_n": 15,
+      "evals": 126,
+      "discards": 0,
+      "discard_reasons": {},
+      "notes": []
+    },
+    "unstack_plate": {
+      "flips_mm": [
+        5.08,
+        5.08,
+        5.9,
+        4.38,
+        5.9,
+        4.38,
+        5.9,
+        5.9,
+        5.08
+      ],
+      "median_flip_mm": 5.08,
+      "fit_flip_mm": 5.69,
+      "fit_wrong": 5,
+      "sweep_n": 48,
+      "sweep_pass": 18,
+      "tilt_pass": 10,
+      "tilt_n": 15,
+      "evals": 126,
+      "discards": 0,
+      "discard_reasons": {},
+      "notes": []
+    },
+    "small_tubes_to_rack": {
+      "flips_mm": [
+        5.9,
+        5.9,
+        6.86,
+        22.69,
+        30.6,
+        6.86,
+        5.9,
+        22.69,
+        5.9
+      ],
+      "median_flip_mm": 6.86,
+      "fit_flip_mm": 6.16,
+      "fit_wrong": 3,
+      "sweep_n": 48,
+      "sweep_pass": 37,
+      "tilt_pass": 9,
+      "tilt_n": 11,
+      "evals": 137,
+      "discards": 36,
+      "discard_reasons": {
+        "not at rest": 36
+      },
+      "notes": []
+    },
+    "rack_into_box": {
+      "flips_mm": [
+        3.24,
+        3.77,
+        3.77,
+        4.38,
+        3.77,
+        3.24,
+        4.38,
+        3.24,
+        30.6
+      ],
+      "median_flip_mm": 3.77,
+      "fit_flip_mm": 3.77,
+      "fit_wrong": 11,
+      "sweep_n": 48,
+      "sweep_pass": 32,
+      "tilt_pass": 5,
+      "tilt_n": 14,
+      "evals": 135,
+      "discards": 22,
+      "discard_reasons": {
+        "not at rest": 21,
+        "a prop left the table": 1
+      },
+      "notes": []
+    }
+  },
+  "wall_s": 372.4
+}

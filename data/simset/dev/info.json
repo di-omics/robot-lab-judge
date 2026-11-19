@@ -1,0 +1,391 @@
+{
+  "date": "2026-11-19T07:06:38",
+  "split": "dev",
+  "seeds": [
+    20000,
+    20007
+  ],
+  "versions": {
+    "labbench": "0.1.0",
+    "code": "92c256eb309b",
+    "dreamlabs": "1.0.42",
+    "mujoco": "4.0.1"
+  },
+  "python": "3.12.13",
+  "generator": {
+    "scenes_per_layout": 6,
+    "layouts": 8,
+    "settle_s": 2.0,
+    "rest_s": 1.0,
+    "oracle_extra_s": 1.0,
+    "lift_m": 0.002,
+    "max_raise_m": 0.08,
+    "rest_speed_m_s": 0.01,
+    "rest_move_m": 0.0015,
+    "rest_turn_deg": 2.0,
+    "extra_rest_windows": 2,
+    "tilt_deg": [
+      4.0,
+      35.0
+    ],
+    "yaw_share": 0.3,
+    "yaw_max_deg": 20.0,
+    "span": 8.0,
+    "retries": 4,
+    "offset_retries": 12,
+    "aim": {
+      "tubes_to_rack": {
+        "flip_mm": 3.82,
+        "q": 0.462,
+        "range_mm": [
+          1.463,
+          11.704
+        ]
+      },
+      "bottle_to_shelf": {
+        "flip_mm": 49.49,
+        "q": 0.333,
+        "range_mm": [
+          44.947,
+          60.0
+        ]
+      },
+      "plate_to_tray": {
+        "flip_mm": 5.57,
+        "q": 0.489,
+        "range_mm": [
+          2.015,
+          16.123
+        ]
+      },
+      "sort_by_cap": {
+        "flip_mm": 39.29,
+        "q": 0.389,
+        "range_mm": [
+          30.011,
+          60.0
+        ]
+      },
+      "tubes_to_waste": {
+        "flip_mm": 41.28,
+        "q": 0.333,
+        "range_mm": [
+          34.24,
+          60.0
+        ]
+      },
+      "stack_tip_boxes": {
+        "flip_mm": 29.07,
+        "q": 0.333,
+        "range_mm": [
+          20.234,
+          60.0
+        ]
+      },
+      "plate_to_hotel_top": {
+        "flip_mm": 6.64,
+        "q": 0.356,
+        "range_mm": [
+          3.17,
+          25.361
+        ]
+      },
+      "plate_to_hotel_middle": {
+        "flip_mm": 5.9,
+        "q": 0.333,
+        "range_mm": [
+          2.95,
+          23.6
+        ]
+      },
+      "plate_to_hotel_bottom": {
+        "flip_mm": 18.25,
+        "q": 0.333,
+        "range_mm": [
+          10.065,
+          60.0
+        ]
+      },
+      "stack_plates": {
+        "flip_mm": 11.88,
+        "q": 0.333,
+        "range_mm": [
+          5.94,
+          47.52
+        ]
+      },
+      "unstack_plate": {
+        "flip_mm": 5.69,
+        "q": 0.444,
+        "range_mm": [
+          2.258,
+          18.065
+        ]
+      },
+      "small_tubes_to_rack": {
+        "flip_mm": 6.16,
+        "q": 0.394,
+        "range_mm": [
+          2.715,
+          21.722
+        ]
+      },
+      "rack_into_box": {
+        "flip_mm": 3.77,
+        "q": 0.548,
+        "range_mm": [
+          1.207,
+          9.658
+        ]
+      }
+    },
+    "calibration_date": "2026-11-19"
+  },
+  "tasks": [
+    "tubes_to_rack",
+    "bottle_to_shelf",
+    "plate_to_tray",
+    "sort_by_cap",
+    "tubes_to_waste",
+    "stack_tip_boxes",
+    "plate_to_hotel_top",
+    "plate_to_hotel_bottom",
+    "stack_plates",
+    "unstack_plate"
+  ],
+  "held_out": [
+    "plate_to_hotel_middle",
+    "small_tubes_to_rack",
+    "rack_into_box"
+  ],
+  "excluded": {
+    "rack_carry": "success also needs earlier stages: rack_lifted_level",
+    "tube_handover": "success also needs earlier stages: right_hand_has_it"
+  },
+  "n_scenes": 475,
+  "counts": {
+    "bottle_to_shelf": {
+      "clean": 8,
+      "pass": 38,
+      "n": 48,
+      "trap": 4,
+      "tilt": 8,
+      "offset": 24,
+      "untouched": 4
+    },
+    "plate_to_hotel_bottom": {
+      "clean": 8,
+      "pass": 26,
+      "n": 44,
+      "trap": 4,
+      "tilt": 8,
+      "offset": 20,
+      "untouched": 4
+    },
+    "plate_to_hotel_top": {
+      "clean": 8,
+      "pass": 27,
+      "n": 48,
+      "trap": 4,
+      "tilt": 8,
+      "offset": 24,
+      "untouched": 4
+    },
+    "plate_to_tray": {
+      "clean": 8,
+      "pass": 20,
+      "n": 48,
+      "trap": 4,
+      "tilt": 8,
+      "offset": 24,
+      "untouched": 4
+    },
+    "sort_by_cap": {
+      "clean": 8,
+      "pass": 37,
+      "n": 48,
+      "trap": 4,
+      "tilt": 8,
+      "offset": 24,
+      "partial": 4
+    },
+    "stack_plates": {
+      "clean": 8,
+      "pass": 23,
+      "n": 48,
+      "trap": 4,
+      "tilt": 8,
+      "offset": 24,
+      "untouched": 4
+    },
+    "stack_tip_boxes": {
+      "clean": 8,
+      "pass": 23,
+      "n": 48,
+      "trap": 4,
+      "tilt": 8,
+      "offset": 24,
+      "untouched": 4
+    },
+    "tubes_to_rack": {
+      "clean": 8,
+      "pass": 31,
+      "n": 47,
+      "trap": 3,
+      "tilt": 8,
+      "offset": 24,
+      "partial": 4
+    },
+    "tubes_to_waste": {
+      "clean": 8,
+      "pass": 39,
+      "n": 48,
+      "trap": 4,
+      "tilt": 8,
+      "offset": 24,
+      "partial": 4
+    },
+    "unstack_plate": {
+      "clean": 8,
+      "pass": 19,
+      "n": 48,
+      "trap": 4,
+      "tilt": 8,
+      "offset": 24,
+      "untouched": 4
+    }
+  },
+  "pass_share": {
+    "bottle_to_shelf": 0.792,
+    "plate_to_hotel_bottom": 0.591,
+    "plate_to_hotel_top": 0.562,
+    "plate_to_tray": 0.417,
+    "sort_by_cap": 0.771,
+    "stack_plates": 0.479,
+    "stack_tip_boxes": 0.479,
+    "tubes_to_rack": 0.66,
+    "tubes_to_waste": 0.812,
+    "unstack_plate": 0.396
+  },
+  "discards": [
+    {
+      "task": "bottle_to_shelf",
+      "kind": "tilt",
+      "reason": "not at rest",
+      "n": 3
+    },
+    {
+      "task": "plate_to_hotel_bottom",
+      "kind": "offset",
+      "reason": "blocked",
+      "n": 133
+    },
+    {
+      "task": "plate_to_hotel_bottom",
+      "kind": "tilt",
+      "reason": "blocked",
+      "n": 3
+    },
+    {
+      "task": "sort_by_cap",
+      "kind": "offset",
+      "reason": "not at rest",
+      "n": 7
+    },
+    {
+      "task": "sort_by_cap",
+      "kind": "tilt",
+      "reason": "a prop left the table",
+      "n": 1
+    },
+    {
+      "task": "sort_by_cap",
+      "kind": "tilt",
+      "reason": "not at rest",
+      "n": 2
+    },
+    {
+      "task": "tubes_to_rack",
+      "kind": "offset",
+      "reason": "a prop left the table",
+      "n": 1
+    },
+    {
+      "task": "tubes_to_rack",
+      "kind": "offset",
+      "reason": "not at rest",
+      "n": 5
+    },
+    {
+      "task": "tubes_to_rack",
+      "kind": "tilt",
+      "reason": "a prop left the table",
+      "n": 2
+    },
+    {
+      "task": "tubes_to_rack",
+      "kind": "tilt",
+      "reason": "not at rest",
+      "n": 1
+    },
+    {
+      "task": "tubes_to_rack",
+      "kind": "trap",
+      "reason": "a prop left the table",
+      "n": 1
+    },
+    {
+      "task": "tubes_to_waste",
+      "kind": "offset",
+      "reason": "blocked",
+      "n": 14
+    }
+  ],
+  "discards_total": 173,
+  "retried": [
+    {
+      "task": "bottle_to_shelf",
+      "kind": "tilt",
+      "n": 2
+    },
+    {
+      "task": "plate_to_hotel_bottom",
+      "kind": "offset",
+      "n": 19
+    },
+    {
+      "task": "plate_to_hotel_bottom",
+      "kind": "tilt",
+      "n": 2
+    },
+    {
+      "task": "sort_by_cap",
+      "kind": "offset",
+      "n": 6
+    },
+    {
+      "task": "sort_by_cap",
+      "kind": "tilt",
+      "n": 3
+    },
+    {
+      "task": "tubes_to_rack",
+      "kind": "offset",
+      "n": 4
+    },
+    {
+      "task": "tubes_to_rack",
+      "kind": "tilt",
+      "n": 2
+    },
+    {
+      "task": "tubes_to_waste",
+      "kind": "offset",
+      "n": 8
+    }
+  ],
+  "skipped_layouts": [],
+  "wall_s": 212.9,
+  "seconds_per_layout_setup": 0.84,
+  "seconds_per_scene": 0.15
+}

@@ -1,0 +1,21 @@
+[project]
+name = "robot-lab-judge"
+version = "0.1.0"
+description = "A vision judge that decides from camera frames whether a simulated robot finished a lab chore."
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "mlx-vlm",
+    "pillow",
+    "av",
+    "numpy",
+]
+
+[dependency-groups]
+dev = ["pytest"]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
