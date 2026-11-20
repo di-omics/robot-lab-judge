@@ -15,6 +15,16 @@ Every saved run, best balanced accuracy first. Truth is the simulator's frozen p
 | always PASS (reference) | - | - | 475 | 283 of 283 (99-100%) | 0 of 192 (0-2%) | 192 of 192 (98-100%) | 0.50 | 0 | - |
 | always FAIL (reference) | - | - | 475 | 0 of 283 (0-1%) | 192 of 192 (98-100%) | 0 of 192 (0-2%) | 0.50 | 0 | - |
 
+## Probes fitted on the train split (not zero-shot)
+
+A probe is a small readout fitted on scenes from the same simulator, camera and lighting. It tests whether the pictures hold the answer. It is not a judge for new settings.
+
+| model | thinking | condition | n | pass recall | fail recall | false-pass rate | balanced accuracy | unparsed | median s per take |
+|---|---|---|---|---|---|---|---|---|---|
+| `frozen/siglip2-lfm2.5-vl-450m/fine-logreg` | - | after | 475 | 270 of 283 (92-98%) | 182 of 192 (91-97%) | 10 of 192 (3-9%) | 0.95 | 0 | 0.5 |
+| `frozen/siglip2-lfm2.5-vl-450m/top-logreg` | - | after | 475 | 274 of 283 (94-99%) | 178 of 192 (88-96%) | 14 of 192 (4-12%) | 0.95 | 0 | 0.0 |
+| `frozen/siglip2-lfm2.5-vl-450m/fine-change-logreg` | - | before_after | 475 | 247 of 283 (83-91%) | 175 of 192 (86-95%) | 17 of 192 (5-14%) | 0.89 | 0 | 0.9 |
+
 ## Notes
 
 - These are simulator scenes, not robot attempts. Both arms rest at home in every scene. A real attempt ends with the arms anywhere.

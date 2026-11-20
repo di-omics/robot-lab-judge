@@ -186,11 +186,17 @@ def board(results_dir: Path) -> str:
     if not runs:
         raise SystemExit(f"no verdicts files in {results_dir}")
 
-    def lines(control: bool) -> list[str]:
+    def kind_of(h: dict) -> str:
+        """A run is a control, a probe fitted on the train split, or a zero-shot judge."""
+        if h.get("condition") == "leak_control":
+            return "control"
+        return "fitted" if h.get("trained_on") else "zero-shot"
+
+    def lines(kind: str) -> list[str]:
         picked = [
             _board_row(f"`{h.get('model_id')}`", str(h.get("thinking")), str(h.get("condition")), rows)
             for h, rows in runs
-            if (h.get("condition") == "leak_control") == control
+            if kind_of(h) == kind
         ]
         return [line for _, line in sorted(picked, key=lambda x: -x[0])]
 
@@ -207,11 +213,17 @@ def board(results_dir: Path) -> str:
         "",
         BOARD_HEAD,
         BOARD_RULE,
-        *lines(control=False),
+        *lines("zero-shot"),
         _board_row("always PASS (reference)", "-", "-", trivial(any_rows, "PASS"), timed=False)[1],
         _board_row("always FAIL (reference)", "-", "-", trivial(any_rows, "FAIL"), timed=False)[1],
     ]
-    controls = lines(control=True)
+    fitted = lines("fitted")
+    if fitted:
+        out += ["", "## Probes fitted on the train split (not zero-shot)", "",
+                "A probe is a small readout fitted on scenes from the same simulator, camera and lighting. "
+                "It tests whether the pictures hold the answer. It is not a judge for new settings.",
+                "", BOARD_HEAD, BOARD_RULE, *fitted]
+    controls = lines("control")
     if controls:
         out += ["", "## Control (not a result): the banner left in", "",
                 "The judge saw the uncropped last frame, with the banner that prints the stage count. "

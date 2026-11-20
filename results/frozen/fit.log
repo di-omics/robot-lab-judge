@@ -1,0 +1,8 @@
+top-logreg: train CV mean balanced accuracy by L2 {0.01: 0.943, 0.1: 0.943, 1.0: 0.944, 10.0: 0.943, 100.0: 0.942}, chose 1.0
+fine-logreg: train CV mean balanced accuracy by L2 {0.01: 0.96, 0.1: 0.959, 1.0: 0.958, 10.0: 0.957, 100.0: 0.953}, chose 0.01
+fine-change-logreg: train CV mean balanced accuracy by L2 {0.01: 0.884, 0.1: 0.884, 1.0: 0.885, 10.0: 0.889, 100.0: 0.886}, chose 10.0
+shuffled-label control (row B): train CV mean balanced accuracy by L2 {'0.01': 0.4682716425953994, '0.1': 0.46595201979822454, '1.0': 0.46024630564749724, '10.0': 0.45766006992763153, '100.0': 0.46153466444013924}
+wrote results/simset_dev/verdicts_frozen__top-logreg_after.jsonl
+wrote results/simset_dev/verdicts_frozen__fine-logreg_after.jsonl
+wrote results/simset_dev/verdicts_frozen__fine-change-logreg_before_after.jsonl
+done in 21 s

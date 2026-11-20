@@ -22,7 +22,8 @@ from labjudge.score import metrics, read_verdicts  # noqa: E402
 from labjudge.sheet import BG, INK, SOFT, _font  # noqa: E402
 
 DATA = Path("data/simset/dev")
-RUN = Path("results/simset_dev/verdicts_LiquidAI__LFM3-VL-2B-MLX-8bit_think_after.jsonl")
+RUN = Path("results/simset_dev/verdicts_LiquidAI__LFM3-VL-2B-MLX-8bit_think_after.jsonl")  # best zero-shot model
+TRAINED = Path("results/simset_dev/verdicts_frozen__fine-logreg_after.jsonl")  # the linear probe
 OUT = Path("docs/img/pass_and_fail.jpg")
 ## chore, kind of the failing scene, short column title
 COLUMNS = (
@@ -68,6 +69,7 @@ def pick(rows: list[dict], task: str, kind: str) -> tuple[dict, dict]:
 def main() -> None:
     rows = [json.loads(x) for x in (DATA / "manifest.jsonl").read_text().splitlines() if x.strip()]
     header, verdicts = read_verdicts(RUN)
+    _, trained = read_verdicts(TRAINED)
     small, big = _font(13), _font(15)
     top = 34
     width = LEFT + len(COLUMNS) * (CELL[0] + PAD)
@@ -87,11 +89,12 @@ def main() -> None:
             img.paste(pic.crop(box).resize(CELL, Image.LANCZOS), (x, y))
             d.rectangle((x - 1, y - 1, x + CELL[0], y + CELL[1]), outline=SOFT, width=1)
         m = metrics([v for v in verdicts if v["task"] == task])
+        t = metrics([v for v in trained if v["task"] == task])
         y = top + 2 * (CELL[1] + PAD)
-        d.text((x, y), f"best judge so far: {m['balanced_accuracy']:.2f}", fill=INK, font=small)
-        d.text((x, y + 18), "0.50 is a coin flip", fill=SOFT, font=small)
+        d.text((x, y), f"zero-shot model: {m['balanced_accuracy']:.2f}", fill=INK, font=small)
+        d.text((x, y + 18), f"linear probe: {t['balanced_accuracy']:.2f}", fill=INK, font=small)
         print(f"{task}: pass {clean['take_id']}, fail {fail['take_id']} (error {fail['error']}), box {box}, "
-              f"balanced accuracy {m['balanced_accuracy']:.2f}")
+              f"zero-shot {m['balanced_accuracy']:.2f}, trained {t['balanced_accuracy']:.2f}")
     OUT.parent.mkdir(parents=True, exist_ok=True)
     img.save(OUT, quality=90)
     print(f"wrote {OUT} {img.size}, judge {header.get('model_id')} thinking {header.get('thinking')}")

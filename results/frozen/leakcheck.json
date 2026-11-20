@@ -1,0 +1,73 @@
+{
+ "dark_threshold": 50,
+ "erode_px": 3,
+ "n_train_layouts": 300,
+ "dark_px_per_layout_min": 14386,
+ "dark_px_per_layout_max": 14473,
+ "mask_px_before_erode": 14386,
+ "mask_px": 8892,
+ "summary": {
+  "train": {
+   "n": 1768,
+   "any_diff": 3,
+   "max_diff": 222
+  },
+  "dev": {
+   "n": 475,
+   "any_diff": 2,
+   "max_diff": 222
+  }
+ },
+ "flagged": [
+  {
+   "take_id": "train-unstack_plate-s10000-01-trap",
+   "task": "unstack_plate",
+   "kind": "trap",
+   "truth": "fail",
+   "n_diff": 4,
+   "n_diff16": 4,
+   "max_diff": 85,
+   "outside_n_diff": 5851
+  },
+  {
+   "take_id": "train-unstack_plate-s10008-01-trap",
+   "task": "unstack_plate",
+   "kind": "trap",
+   "truth": "fail",
+   "n_diff": 10,
+   "n_diff16": 8,
+   "max_diff": 72,
+   "outside_n_diff": 5837
+  },
+  {
+   "take_id": "train-unstack_plate-s10028-01-trap",
+   "task": "unstack_plate",
+   "kind": "trap",
+   "truth": "fail",
+   "n_diff": 3,
+   "n_diff16": 3,
+   "max_diff": 222,
+   "outside_n_diff": 5930
+  },
+  {
+   "take_id": "dev-unstack_plate-s20000-01-trap",
+   "task": "unstack_plate",
+   "kind": "trap",
+   "truth": "fail",
+   "n_diff": 15,
+   "n_diff16": 14,
+   "max_diff": 222,
+   "outside_n_diff": 5831
+  },
+  {
+   "take_id": "dev-unstack_plate-s20004-01-trap",
+   "task": "unstack_plate",
+   "kind": "trap",
+   "truth": "fail",
+   "n_diff": 13,
+   "n_diff16": 0,
+   "max_diff": 16,
+   "outside_n_diff": 5865
+  }
+ ]
+}

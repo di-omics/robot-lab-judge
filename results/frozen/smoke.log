@@ -1,0 +1,24 @@
+processor parity on a 512 x 512 crop: grid ours (32, 32), processor (np.int32(32), np.int32(32)), max abs patch difference 1.19e-07
+processor parity on the 512 x 288 top picture: grid ours (18, 32), processor (np.int32(18), np.int32(32)), max abs patch difference 1.19e-07
+grids: top (18, 32), fine (32, 32) x 8 crops; hidden 768
+same picture twice: largest absolute difference 0.0 over 20 scenes
+seconds per scene for top + 8 fine crops of the last frame: median 0.502, max 0.541
+  train-tubes_to_rack-s10000-00-clean vs train-tubes_to_rack-s10000-01-trap: top |diff| max 3.031, fine |diff| max 3.266, fine cosine 0.9936
+  train-tubes_to_rack-s10000-00-clean vs train-tubes_to_rack-s10000-02-tilt: top |diff| max 5.375, fine |diff| max 2.359, fine cosine 0.9957
+  train-tubes_to_rack-s10000-00-clean vs train-tubes_to_rack-s10000-03-offset: top |diff| max 2.406, fine |diff| max 1.031, fine cosine 0.9993
+  train-tubes_to_rack-s10000-00-clean vs train-tubes_to_rack-s10000-04-offset: top |diff| max 2.469, fine |diff| max 2.766, fine cosine 0.9950
+  train-tubes_to_rack-s10000-00-clean vs train-tubes_to_rack-s10000-05-offset: top |diff| max 1.016, fine |diff| max 1.625, fine cosine 0.9995
+  train-tubes_to_rack-s10000-00-clean vs train-tubes_to_rack-s10001-00-clean: top |diff| max 2.664, fine |diff| max 2.266, fine cosine 0.9972
+  train-tubes_to_rack-s10000-00-clean vs train-tubes_to_rack-s10001-01-partial: top |diff| max 3.312, fine |diff| max 3.406, fine cosine 0.9922
+  train-tubes_to_rack-s10000-00-clean vs train-tubes_to_rack-s10001-02-tilt: top |diff| max 5.375, fine |diff| max 1.906, fine cosine 0.9962
+  train-tubes_to_rack-s10000-00-clean vs train-tubes_to_rack-s10001-03-offset: top |diff| max 2.672, fine |diff| max 2.266, fine cosine 0.9956
+  train-tubes_to_rack-s10000-00-clean vs train-tubes_to_rack-s10001-04-offset: top |diff| max 3.383, fine |diff| max 1.891, fine cosine 0.9979
+  train-tubes_to_rack-s10000-00-clean vs train-tubes_to_rack-s10001-05-offset: top |diff| max 3.477, fine |diff| max 1.859, fine cosine 0.9975
+  train-tubes_to_rack-s10000-00-clean vs train-tubes_to_rack-s10002-00-clean: top |diff| max 2.969, fine |diff| max 2.266, fine cosine 0.9967
+  train-tubes_to_rack-s10000-00-clean vs train-tubes_to_rack-s10002-01-trap: top |diff| max 4.625, fine |diff| max 2.523, fine cosine 0.9950
+  train-tubes_to_rack-s10000-00-clean vs train-tubes_to_rack-s10002-02-tilt: top |diff| max 2.656, fine |diff| max 2.188, fine cosine 0.9965
+  train-tubes_to_rack-s10000-00-clean vs train-tubes_to_rack-s10002-03-offset: top |diff| max 3.156, fine |diff| max 2.891, fine cosine 0.9943
+  train-tubes_to_rack-s10000-00-clean vs train-tubes_to_rack-s10002-04-offset: top |diff| max 2.938, fine |diff| max 2.344, fine cosine 0.9951
+  train-tubes_to_rack-s10000-00-clean vs train-tubes_to_rack-s10002-05-offset: top |diff| max 3.094, fine |diff| max 2.156, fine cosine 0.9966
+  train-tubes_to_rack-s10000-00-clean vs train-tubes_to_rack-s10003-00-clean: top |diff| max 1.812, fine |diff| max 2.109, fine cosine 0.9978
+  train-tubes_to_rack-s10000-00-clean vs train-tubes_to_rack-s10003-01-partial: top |diff| max 3.750, fine |diff| max 2.672, fine cosine 0.9949
