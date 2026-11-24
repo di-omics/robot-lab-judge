@@ -4,6 +4,7 @@
 |---|---|
 | `simset_dev/` | Every judge run on the dev split of the scene set: `board.md` (all runs in 1 table), `breakdown.md` (by kind of end state, by distance, by chore), `reasoning_keywords.md`, and 1 `verdicts_*.jsonl` file per run |
 | `simset/` | `calibration.md` and `calibration.json`: how far a prop can move before each chore fails |
+| `frozen/` | The linear probe on frozen features: `report.md`, `perturbed.md` (how fragile it is), `leakcheck.md`, the fitted heads (`heads_*.npz`), `dev_predictions.jsonl` and the run logs |
 | `first_look/` | The earlier look at 59 recorded takes, see [docs/first-look.md](../docs/first-look.md) |
 | `sealed_log.jsonl` | 1 line for every look at the sealed test split |
 

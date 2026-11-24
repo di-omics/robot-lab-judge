@@ -63,7 +63,7 @@ Splits are by layout seed and never share one.
 | test | 30000 to 30019 | 1,537 | sealed |
 
 `plate_to_hotel_middle`, `small_tubes_to_rack` and `rack_into_box` appear only in test (`seen_task` is false
-there), to measure chores a trained judge has not seen.
+there), to measure chores that a judge fitted on the train split has not seen.
 
 The train and dev manifests are in the repo (`data/simset/<split>/manifest.jsonl`). Each row names the scene, its
 kind, the commanded move, the measured final error, the rule text and the truth. The pictures are not in the repo.

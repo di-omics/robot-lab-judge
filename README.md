@@ -187,7 +187,7 @@ of the chore's own look-alike failures. Truth is the frozen pass rule on the set
 | dev | 475 | 20000 to 20007 | compare steps, choose prompts and thresholds |
 | test | 1,537 | 30000 to 30019 | sealed; the final number for a step |
 
-3 chores appear only in the test split, to measure chores a trained judge has not seen. How the scenes are made,
+3 chores appear only in the test split, to measure chores that a judge fitted on the train split has not seen. How the scenes are made,
 how far a prop can move before a chore fails, and what sealing means here: [docs/scene-set.md](docs/scene-set.md).
 
 ## Where things are
@@ -198,7 +198,7 @@ how far a prop can move before a chore fails, and what sealing means here: [docs
 | Read what a model said about a scene | `results/simset_dev/verdicts_*.jsonl` (1 line per scene) | |
 | Score saved verdicts again | `labjudge/score.py` | `python -m labjudge board --results results/simset_dev` |
 | Ask a local model to judge the dev scenes | `labjudge/judge_mlx.py`, `labjudge/prompts.py` | `python -m labjudge judge --data data/simset/dev --results results/simset_dev --conditions after` |
-| Fit the linear probe | `labjudge/frozen/` ([report](results/frozen/report.md)) | `python -m labjudge.frozen fit` |
+| Fit the linear probe | `labjudge/frozen/` ([report](results/frozen/report.md)) | `python -m labjudge.frozen extract --split train`, `python -m labjudge.frozen extract --split dev`, then `python -m labjudge.frozen fit` |
 | Check how fragile the probe is | `tools/probe_perturbed.py`, [`results/frozen/perturbed.md`](results/frozen/perturbed.md) | `python tools/probe_perturbed.py` |
 | Make the scenes again | `labjudge/simset/` ([how](docs/scene-set.md)) | `python -m labjudge.simset generate --split dev` |
 | See which scenes exist and why each passes or fails | `data/simset/train/manifest.jsonl`, `data/simset/dev/manifest.jsonl` | |
